@@ -3,6 +3,8 @@ GOFILES=$(shell find . -type f -name '*.go')
 GONAME="manypoint"
 
 build:
+	@echo "Building react client"
+	cd client; npm install && npm run build
 	@echo "Building $(GOFILES) to ./bin"
 	GOBIN=$(GOBIN) go build -o bin/$(GONAME) 
 
